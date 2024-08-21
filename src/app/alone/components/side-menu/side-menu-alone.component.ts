@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 interface MenuIten{
   name: string;
@@ -6,15 +8,18 @@ interface MenuIten{
 }
 
 @Component({
-  selector: 'maps-side-menu',
-  templateUrl: './side-menu.component.html',
-  styleUrls: ['./side-menu.component.css'],	
+  selector: 'side-menu-alone',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './side-menu-alone.component.html',
+  styleUrl: './side-menu-alone.component.css',	
 })
-export class SideMenuComponent {
+export class SideMenuAloneComponent {
   public menuItems: MenuIten[] = [
     { name: 'Fullscreen', route: '/maps/fullscreen' },
     { name: 'Zoom Range', route: '/maps/zoom-range' },
     { name: 'Markers', route: '/maps/markers' },
     { name: 'Properties', route: '/maps/properties' },
+    { name: 'Alone', route: '/alone' },
   ]
 }
